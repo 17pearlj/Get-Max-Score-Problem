@@ -10,13 +10,10 @@ public:
         while (i1 < nums1.size() || i2 < nums2.size()) {
             if (i1 < nums1.size() && (i2 == nums2.size() || nums1[i1] < nums2[i2])) {
                 score1 += nums1[i1++] % modV;
-              //  score1 = fmod(score1, modV);
             } else if (i2 < nums2.size() && (i1 == nums1.size() || nums1[i1] > nums2[i2])) {
                 score2 += nums2[i2++] % modV;
-               // score2 = fmod(score2, modV);
             } else {
                 score1 = (max(score1, score2) + nums1[i1]) % modV;
-               // score1 = fmod(score1, modV);
                 score2 = score1;
                 i1++;
                 i2++;
